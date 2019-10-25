@@ -96,15 +96,15 @@ RUN composer require drupal/config_rewrite
 # Install memcache modules
 RUN composer require \
   drupal/memcache
-COPY files/settings.memcache.php sites/default/settings.memcache.php
+#COPY files/settings.memcache.php sites/default/settings.memcache.php
 
 # Install varnish_purge
 RUN composer require \
   drupal/purge \
   drupal/varnish_purge
 
-COPY files/install-drupal.sh install-drupal.sh
-RUN chmod +x install-drupal.sh
+#COPY files/install-drupal.sh install-drupal.sh
+#RUN chmod +x install-drupal.sh
 
 # Finish
 EXPOSE 80 3306 22 443
