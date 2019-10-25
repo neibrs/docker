@@ -13,7 +13,8 @@ RUN git clone -b 8.8.x https://git.drupal.org/project/drupal.git /var/www/html
 
 WORKDIR /var/www/html
 ENV COMPOSER_PROCESS_TIMEOUT 1200
-RUN composer install
+RUN composer self-update && \
+  composer install
 
 # Install Drupal modules
 RUN composer require \
