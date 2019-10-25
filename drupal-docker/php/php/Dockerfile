@@ -57,9 +57,9 @@ RUN apt-get install -y \
   php-memcached
 
 # Install varnish
-RUN apt-get install -y \
-  varnish
-ADD files/default.vcl /etc/varnish/default.vcl
+#RUN apt-get install -y \
+#  varnish
+#ADD files/default.vcl /etc/varnish/default.vcl
 
 # Install composer
 RUN apt-get install -y \
