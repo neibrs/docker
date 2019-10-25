@@ -1,9 +1,6 @@
 FROM debian:stretch
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list && \
- sed -i 's/security.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list && \
-  cat /etc/apt/sources.list
 ENV DEBIAN_VERSION 20190529
 RUN apt-get update && apt-get dist-upgrade -y
 
