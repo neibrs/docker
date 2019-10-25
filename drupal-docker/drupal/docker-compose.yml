@@ -1,0 +1,10 @@
+version: '3'
+services:
+  drupal:
+    build:
+      context: ./drupal
+    container_name: drupal
+    ports:
+      - 8081:6081
+    volumes:
+      - ./web:/var/www/html
