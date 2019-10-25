@@ -1,4 +1,4 @@
-FROM php_php
+FROM neibrs/php
 
 # Install system packages
 RUN apt-get install -y \
