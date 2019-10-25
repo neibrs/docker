@@ -59,7 +59,7 @@ RUN apt-get install -y \
 # Install varnish
 RUN apt-get install -y \
   varnish
-COPY files/default.vcl /etc/varnish/default.vcl
+COPY ./files/default.vcl /etc/varnish/default.vcl
 
 # Install composer
 RUN apt-get install -y \
