@@ -7,7 +7,7 @@ RUN apt-get install -y \
   wget
 
 # Mysql server config
-COPY files/60-drupal.cnf /etc/mysql/conf.d/60-drupal.cnf
+#COPY files/60-drupal.cnf /etc/mysql/conf.d/60-drupal.cnf
 
 # Install Drupal
 RUN rm -rf /var/www/html
