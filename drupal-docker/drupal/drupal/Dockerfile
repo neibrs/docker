@@ -6,9 +6,6 @@ RUN apt-get install -y \
   unzip \
   wget
 
-# Mysql server config
-#COPY files/60-drupal.cnf /etc/mysql/conf.d/60-drupal.cnf
-
 # Install Drupal
 RUN rm -rf /var/www/html
 ENV DRUPAL_VERSION 20190521
@@ -102,6 +99,9 @@ RUN composer require \
 RUN composer require \
   drupal/purge \
   drupal/varnish_purge
+
+# Mysql server config
+#COPY files/60-drupal.cnf /etc/mysql/conf.d/60-drupal.cnf
 
 #COPY files/install-drupal.sh install-drupal.sh
 #RUN chmod +x install-drupal.sh
