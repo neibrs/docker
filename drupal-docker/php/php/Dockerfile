@@ -1,6 +1,10 @@
 FROM debian:stretch
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list && \
+  sed -i 's/security.debian.org/mirrors.aliyun.com/' /etc/apt/sources.list && \
+  cat /etc/apt/sources.list
+
 ENV DEBIAN_VERSION 20190529
 RUN apt-get update && apt-get dist-upgrade -y
 
@@ -57,13 +61,16 @@ RUN apt-get install -y \
   php-memcached
 
 # Install varnish
-#RUN apt-get install -y \
-#  varnish
-#ADD files/default.vcl /etc/varnish/default.vcl
+RUN apt-get install -y \
+  varnish
+ADD files/default.vcl /etc/varnish/default.vcl
 
 # Install composer
-RUN apt-get install -y \
-  composer
+RUN php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');" && \
+  php composer-setup.php && \
+  php -r "unlink('composer-setup.php');" && \
+  mv composer.phar /usr/local/bin/composer && \
+  chmod a+x /usr/local/bin/composer
 
 # Install Supervisor
 RUN apt-get install -y \

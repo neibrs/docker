@@ -1,5 +1,6 @@
 FROM neibrs/php
 
+
 # Install system packages
 RUN apt-get install -y \
   git \
@@ -9,13 +10,13 @@ RUN apt-get install -y \
 # Install Drupal
 RUN rm -rf /var/www/html
 ENV DRUPAL_VERSION 20190521
-RUN git clone -b 8.8.x https://git.drupal.org/project/drupal.git /var/www/html
+RUN git clone -b 8.8.x https://git.keiu.cn/neibrs/drupal.git /var/www/html
 
 WORKDIR /var/www/html
 ENV COMPOSER_PROCESS_TIMEOUT 1200
-RUN composer && \
-  composer self-update && \
-  composer install
+RUN composer
+RUN composer selfupdate
+RUN composer install
 
 # Install Drupal modules
 RUN composer require \
