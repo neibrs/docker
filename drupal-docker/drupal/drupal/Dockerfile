@@ -73,13 +73,13 @@ RUN mkdir -p /var/www/private && \
 # Install migrate modules
 
 RUN composer require \
-  drupal/csv_serialization \
+#  drupal/csv_serialization \
   drupal/default_content \
   drupal/migrate_plus \
   drupal/migrate_source_csv \
   drupal/migrate_source_xls \
-  drupal/migrate_tools \
-  drupal/xls_serialization
+  drupal/migrate_tools
+#  drupal/xls_serialization
 
 # Install api-first modules
 RUN composer require \
