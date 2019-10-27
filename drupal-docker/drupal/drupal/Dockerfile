@@ -17,7 +17,24 @@ ENV COMPOSER_PROCESS_TIMEOUT 1200
 RUN composer install
 
 # Install Drupal modules
-RUN composer require \
+  drupal/purge \
+  drupal/config_rewrite \
+  drupal/config_update \
+  drupal/memcache \
+  drupal/restui \
+  drupal/page_manager \
+  drupal/panels \
+  drupal/panelizer \
+#  drupal/csv_serialization \
+  drupal/default_content \
+  drupal/migrate_plus \
+  drupal/migrate_source_csv \
+  drupal/migrate_source_xls \
+  drupal/migrate_tools \
+  drupal/xls_serialization \
+  drupal/entity_print \
+  mikehaertl/phpwkhtmltopdf \
+  drupal/charts \
   drupal/r4032login \
   drupal/address \
   drupal/ajax_links_api \
@@ -34,28 +51,45 @@ RUN composer require \
   drupal/quicktabs \
   drupal/reference_table_formatter \
   drupal/rules \
-  drupal/search_api_solr \
+#  drupal/search_api_solr \
   drupal/token \
   drupal/token_filter \
-  drush/drush \
+  drupal/views_field_formatter \
+  drupal/ajax_links_api \
+  drupal/varnish_purge \
+  drupal/adminimal_admin_toolbar \
+  drupal/coffee \
+  drupal/color_field \
+  drupal/commerce \
+  drupal/commerce_recurring \
+  drupal/cog \
   drupal/console \
-  drupal/views_field_formatter
-
-# If PHP filter is empty, module should return TRUE and not execute code
-# https://www.drupal.org/project/php/issues/2678430
-#RUN cd modules/contrib/php && \
-#  wget https://www.drupal.org/files/issues/php_condition_check_empty-2678430-13.patch && \
-#  patch -p1 < php_condition_check_empty-2678430-13.patch && \
-#  rm php_condition_check_empty-2678430-13.patch
-
-# Install charts
-RUN composer require drupal/charts
-
-# Install entity_print
-RUN composer require drupal/entity_print \
-  mikehaertl/phpwkhtmltopdf \
-  drupal/eva \
-  drupal/field_widget_class
+  drush/drush \
+  drupal/drush_language \
+  kgaut/potx \
+  drupal/block_style_plugins \
+  drupal/typed_data \
+  drupal/geofield \
+  drupal/baidu_map \
+  drupal/geocoder \
+  drupal/computed_field \
+  drupal/geolocation \
+  drupal/geocoder_autocomplete \
+  drupal/block_class \
+  drupal/ds \
+  drupal/superfish \
+  drupal/libraries \
+  drupal/commerce_autosku \
+  drupal/views_slideshow \
+  drupal/views_slideshow_cycle \
+  drupal/login_security \
+  drupal/smart_ip \
+  drupal/if_then_else \
+  drupal/purge_purger_http \
+  drupal/xhprof \
+  drupal/components \
+  drupal/cog \
+  drupal/devel
 
 # Install Drupal site
 RUN mkdir -p /var/www/html/sites/default/files && \
@@ -72,29 +106,6 @@ RUN mkdir -p /var/www/private && \
 
 # Install migrate modules
 
-RUN composer require \
-#  drupal/csv_serialization \
-  drupal/default_content \
-  drupal/migrate_plus \
-  drupal/migrate_source_csv \
-  drupal/migrate_source_xls \
-  drupal/migrate_tools
-#  drupal/xls_serialization
-
-# Install api-first modules
-RUN composer require \
-  #drupal/graphql \
-  drupal/restui
-  # [ERROR] Incomplete or missing schema for simple_oauth.oauth2_token.bundle.
-  #drupal/simple_oauth
-
-# Configuration management
-RUN composer require drupal/config_rewrite
-
-# Install memcache modules
-RUN composer require \
-  drupal/memcache
-#COPY files/settings.memcache.php sites/default/settings.memcache.php
 
 # Install varnish_purge
 RUN composer require \
