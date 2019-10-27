@@ -17,6 +17,7 @@ ENV COMPOSER_PROCESS_TIMEOUT 1200
 RUN composer install
 
 # Install Drupal modules
+RUN composer require \
   drupal/purge \
   drupal/config_rewrite \
   drupal/config_update \
