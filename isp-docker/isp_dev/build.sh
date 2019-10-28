@@ -1,18 +1,18 @@
 #!/bin/sh
 
-docker pull 114.215.42.138:5000/eabax_dev
+docker pull neibrs/isp_dev
 
-docker rm -f eabax_dev
-docker run -d --name eabax_dev 114.215.42.138:5000/eabax_dev
+docker rm -f isp_dev
+docker run -d --name isp_dev 114.215.42.138:5000/isp_dev
 if [ -d ./web.old ]; then
   sudo rm -rf ./web.old
 fi
 if [ -d ./web ]; then
   mv ./web ./web.old
 fi
-sudo docker cp eabax_dev:/var/www/html ./web
-docker stop eabax_dev
-docker rm eabax_dev
+sudo docker cp isp_dev:/var/www/html ./web
+docker stop isp_dev
+docker rm isp_dev
 
 sudo chown -R $USER ./web
 sudo chmod -R g+w ./web

@@ -2,8 +2,8 @@
 
 docker-compose up -d
 
-#docker rm -f isp
-#docker run -d --name isp 114.215.42.138:5000/isp
+docker rm -f isp
+docker run -d --name isp neibrs/isp
 if [ -d ./web.old ]; then
   sudo rm -rf ./web.old
 fi
