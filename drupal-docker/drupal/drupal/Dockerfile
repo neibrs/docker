@@ -1,6 +1,5 @@
 FROM neibrs/php
 
-
 # Install system packages
 RUN apt-get install -y \
   git \
@@ -26,7 +25,6 @@ RUN composer require \
   drupal/page_manager \
   drupal/panels \
   drupal/panelizer \
-#  drupal/csv_serialization \
   drupal/default_content \
   drupal/migrate_plus \
   drupal/migrate_source_csv \
@@ -52,7 +50,6 @@ RUN composer require \
   drupal/quicktabs \
   drupal/reference_table_formatter \
   drupal/rules \
-#  drupal/search_api_solr \
   drupal/token \
   drupal/token_filter \
   drupal/views_field_formatter \
