@@ -1,8 +1,7 @@
 version: '3'
 services:
   isp:
-    build:
-      context: ./isp
+    image: neibrs/isp
     container_name: isp
     ports:
       - 8180:6081

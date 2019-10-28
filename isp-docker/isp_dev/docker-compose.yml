@@ -1,8 +1,8 @@
 version: "2"
 services:
-  eabax_dev:
-    image: 114.215.42.138:5000/eabax_dev
-    container_name: full_eabax_dev
+  isp_dev:
+    image: neibrs/isp_dev
+    container_name: full_isp_dev
     environment:
       XDEBUG_CONFIG: remote_host=172.17.0.1
     ports:
