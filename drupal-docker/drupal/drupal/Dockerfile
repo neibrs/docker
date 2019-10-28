@@ -114,10 +114,10 @@ RUN composer require \
   drupal/varnish_purge
 
 # Mysql server config
-COPY files/60-drupal.cnf /etc/mysql/conf.d/60-drupal.cnf
+#COPY files/60-drupal.cnf /etc/mysql/conf.d/60-drupal.cnf
 
-COPY files/install-drupal.sh install-drupal.sh
-RUN chmod +x install-drupal.sh
+#COPY files/install-drupal.sh install-drupal.sh
+#RUN chmod +x install-drupal.sh
 
 # Finish
 EXPOSE 80 3306 22 443
