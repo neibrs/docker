@@ -105,9 +105,6 @@ RUN mkdir -p /var/www/html/sites/default/files && \
 RUN mkdir -p /var/www/private && \
   chown -R www-data:www-data /var/www/private
 
-# Install migrate modules
-
-
 # Install varnish_purge
 RUN composer require \
   drupal/purge \
