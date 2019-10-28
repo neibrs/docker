@@ -87,10 +87,12 @@ RUN composer require \
   drupal/smart_ip \
   drupal/if_then_else \
   drupal/purge_purger_http \
-  drupal/xhprof \
   drupal/components \
-  drupal/cog \
   drupal/devel
+
+RUN composer require \
+  drupal/devel \
+  drupal/xhprof
 
 # Install Drupal site
 RUN mkdir -p /var/www/html/sites/default/files && \
@@ -104,14 +106,6 @@ RUN mkdir -p /var/www/html/sites/default/files && \
 # install-drupal.sh will setup /var/www/private as file_private_path, create it first
 RUN mkdir -p /var/www/private && \
   chown -R www-data:www-data /var/www/private
-
-# Install migrate modules
-
-
-# Install varnish_purge
-RUN composer require \
-  drupal/purge \
-  drupal/varnish_purge
 
 # Mysql server config
 COPY files/60-drupal.cnf /etc/mysql/conf.d/60-drupal.cnf
