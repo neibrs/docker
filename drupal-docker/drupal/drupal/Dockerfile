@@ -89,8 +89,7 @@ RUN composer require \
   drupal/purge_purger_http \
   drupal/xhprof \
   drupal/components \
-  drupal/cog \
-  drupal/devel
+  drupal/cog
 
 # Install Drupal site
 RUN mkdir -p /var/www/html/sites/default/files && \

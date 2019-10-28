@@ -1,0 +1,10 @@
+version: '3'
+services:
+  isp:
+    build:
+      context: ./isp
+    container_name: isp
+    ports:
+      - 8180:6081
+    volumes:
+      - ./web:/var/www/html

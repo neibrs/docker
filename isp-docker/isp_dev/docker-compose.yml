@@ -1,0 +1,11 @@
+version: "2"
+services:
+  eabax_dev:
+    image: 114.215.42.138:5000/eabax_dev
+    container_name: full_eabax_dev
+    environment:
+      XDEBUG_CONFIG: remote_host=172.17.0.1
+    ports:
+      - 8181:80
+#    volumes:
+#      - ./web:/var/www/html
