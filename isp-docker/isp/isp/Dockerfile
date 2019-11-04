@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt install -y curl
 
 # Install stable version of eabax modules
-COPY files/.ssh_config /root/.ssh/config
+#COPY files/.ssh_config /root/.ssh/config
 RUN apt-get install -y sshpass
 #RUN sshpass -p 39cb3ae0 git clone -b 19.11 ssh://git@114.215.42.138/opt/git/eabax.git /var/www/html/modules/eabax
 
