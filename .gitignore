@@ -1,2 +1,7 @@
-.idea
 web
+web.old
+.docker-sync
+.DS_Store
+.idea
+speedtest
+test.dat
