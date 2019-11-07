@@ -5,6 +5,6 @@ services:
   app-unison:
     image: neibrs/isp_dev
     environment:
-      XDEBUG_CONFIG: docker.for.mac.host.internal
+      XDEBUG_CONFIG: docker.for.host.internal
     ports:
       - 8181:80
