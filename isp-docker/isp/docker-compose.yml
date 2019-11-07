@@ -1,9 +1,8 @@
-version: '3'
+# This is our production compose file - not changed for docker-sync or similar
+
+version: "2"
 services:
-  isp:
+  app-simplest:
     image: neibrs/isp
     container_name: isp
-    ports:
-      - 8180:6081
-    volumes:
-      - ./web:/var/www/html
+#    command: ['watch', '-n3', 'cat /var/www/index.html']
