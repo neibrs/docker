@@ -1,11 +1,10 @@
+# This is our production compose file - not changed for docker-sync or similar
+
 version: "2"
 services:
-  isp_dev:
+  app-unison:
     image: neibrs/isp_dev
-    container_name: full_isp_dev
     environment:
-      XDEBUG_CONFIG: remote_host=172.17.0.1
+      XDEBUG_CONFIG: docker.for.mac.host.internal
     ports:
       - 8181:80
-#    volumes:
-#      - ./web:/var/www/html
