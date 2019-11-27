@@ -60,6 +60,7 @@ RUN composer require \
   drupal/color_field \
   drupal/commerce \
   drupal/commerce_recurring \
+  drupal/commerce_paypal \
   drupal/cog \
   drupal/console \
   drush/drush \
@@ -86,7 +87,9 @@ RUN composer require \
   drupal/purge_purger_http \
   drupal/xhprof \
   drupal/components \
-  drupal/cog
+  drupal/cog \
+  drupal/easy_breadcrumb \
+  drupal/commerce_demo
 
 # Install Drupal site
 RUN mkdir -p /var/www/html/sites/default/files && \
