@@ -61,6 +61,9 @@ RUN composer require \
   drupal/commerce \
   drupal/commerce_recurring \
   drupal/commerce_paypal \
+  drupal/commerce_wechat_pay:1.x-dev \
+  drupal/commerce_alipay:1.x-dev \
+  drupal/alipay_api \
   drupal/cog \
   drupal/console \
   drush/drush \

@@ -1,10 +1,10 @@
-# This is our production compose file - not changed for docker-sync or similar
-
-version: "2"
+version: '3'
 services:
-  app-unison:
+  isp_dev:
     image: neibrs/isp_dev
-    environment:
-      XDEBUG_CONFIG: docker.for.host.internal
+    container_name: isp_dev
     ports:
       - 8181:80
+    volumes:
+      - ./web:/var/www/html
+
