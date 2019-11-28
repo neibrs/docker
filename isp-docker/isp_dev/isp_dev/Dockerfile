@@ -9,8 +9,8 @@ RUN apt-get install -y \
   mc \
   mysqltuner
 
-COPY files/.bash_aliases /root/.bash_aliases
-COPY files/.inputrc /root/.inputrc
+#COPY files/.bash_aliases /root/.bash_aliases
+#COPY files/.inputrc /root/.inputrc
 
 ENV TERM=xterm-256color \
   LANG=C.UTF-8
