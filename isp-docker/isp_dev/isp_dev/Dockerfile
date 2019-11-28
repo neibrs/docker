@@ -51,7 +51,7 @@ RUN set -x; \
   && git clone --depth 1 https://github.com/derekwyatt/vim-scala.git \
   && git clone --depth 1 https://github.com/kchmck/vim-coffee-script.git
 
-COPY files/.vimrc /root/.vimrc
+#COPY files/.vimrc /root/.vimrc
 
 # Setup apcu
 # php-apcu for debian stretch does not have apc.php file
